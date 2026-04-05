@@ -1,11 +1,11 @@
 from pydantic import BaseModel, Field
 from datetime import date as dt_date
 from typing import Optional
-from app.models import TransactionType # Ensure this import is correct
+from app.models import TransactionType 
 
 class TransactionBase(BaseModel):
     amount: float = Field(..., gt=0)
-    type: TransactionType # This is line 10 where your error likely is
+    type: TransactionType 
     category: str
     date: Optional[dt_date] = None
     description: Optional[str] = None
